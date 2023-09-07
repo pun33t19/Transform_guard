@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final list = [CustomListItem(text1: "Ankali Sector, Sangli",text2: "Power Way 2",text3: "Avg height - 200.87 m")];
+    final list = [CustomListItem(text1: "Ankali Sector, Sangli",text2: "Power Way 2",text3: "Avg height - 200.87 m", trailingNumber: 60,)];
 
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;

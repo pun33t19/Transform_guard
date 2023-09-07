@@ -4,6 +4,7 @@ class CustomListItem extends StatelessWidget {
   final String text1;
   final String text2;
   final String text3;
+  final int trailingNumber;
   // final String imagePath;
   final Function()? onTap;
 
@@ -11,6 +12,7 @@ class CustomListItem extends StatelessWidget {
     required this.text1,
     required this.text2,
     required this.text3,
+    required this.trailingNumber,
     // required this.imagePath,
     this.onTap,
   });
@@ -52,7 +54,21 @@ class CustomListItem extends StatelessWidget {
                   ),
                 ],
               ),
-              // trailing: Image.asset(imagePath),
+              trailing: Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: trailingNumber>80?Colors.red:trailingNumber>50?Colors.yellow:Colors.green, // Customize the circle color as needed
+              ),
+              padding: EdgeInsets.all(8.0), // Adjust the padding as needed
+              child: Text(
+                trailingNumber.toString(), // Convert the number to a string
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16.0,
+                  color: Colors.white, // Customize the number color
+                ),
+              ),
+              ),
               onTap: onTap,
             ),
           ),
