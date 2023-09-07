@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final list = [];
+    final list = [CustomListItem(text1: "Ankali Sector, Sangli",text2: "Power Way 2",text3: "Avg height - 200.87 m")];
 
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
@@ -46,7 +46,8 @@ class HomeScreen extends StatelessWidget {
                   color: Colors.black.withOpacity(0.3),
                 ),
               )
-            ]),
+            ],
+            ),
             // ElevatedButton(
             //   onPressed: () {
             //     Navigator.of(context).push(MaterialPageRoute(
@@ -57,6 +58,7 @@ class HomeScreen extends StatelessWidget {
             //   child: Text('Open Full-Screen Image'),
             // ),
             ListView.separated(
+                shrinkWrap: true,
                 itemBuilder: (context, index) {
                   return list[index];
                 },

@@ -17,32 +17,45 @@ class CustomListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Container(
+    return  Container(
           decoration: BoxDecoration(
             borderRadius:
                 BorderRadius.circular(12.0), // Adjust the radius as needed
             border: Border.all(
-              color: Colors.green, // Green border color
+              color: Color.fromARGB(255, 223, 225, 223), // Green border color
               width: 2.0, // Border width
             ),
           ),
-          child: ListTile(
-            leading: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(text1),
-                Text(text2),
-                Text(text3),
-              ],
+          child: Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: ListTile(
+              leading: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(text1,
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 132, 138, 148)
+                    ),
+                  ),
+                  Text(text2,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16.0,
+                      color: Color.fromARGB(255, 0, 32, 85)
+                    ),
+                  ),
+                  Text(text3,
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 132, 138, 148)
+                    )
+                  ),
+                ],
+              ),
+              // trailing: Image.asset(imagePath),
+              onTap: onTap,
             ),
-            // trailing: Image.asset(imagePath),
-            onTap: onTap,
           ),
-        ),
-      ),
-    );
+        );
   }
 }
