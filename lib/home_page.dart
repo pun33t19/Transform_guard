@@ -9,6 +9,9 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+
     return SafeArea(
         child: Scaffold(
       body: Container(
@@ -19,19 +22,19 @@ class HomeScreen extends StatelessWidget {
             SizedBox(
               height: 45,
             ),
-            Text(
-              "Transformers",
-              style: GoogleFonts.poppins(color: Colors.black),
+            Container(
+              height: height * 0.25,
+              child: Image.asset('assets/bg.png'),
             ),
-            ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => MapViewer(assetPath: 'assets/image2.png'),
-              ));
-            },
-            child: Text('Open Full-Screen Image'),
-          ),
-          CustomListItem(text1: 'This', text2: 'is', text3: 'sangli',),
+            // ElevatedButton(
+            //   onPressed: () {
+            //     Navigator.of(context).push(MaterialPageRoute(
+            //       builder: (context) =>
+            //           MapViewer(assetPath: 'assets/image2.png'),
+            //     ));
+            //   },
+            //   child: Text('Open Full-Screen Image'),
+            // ),
           ],
         ),
       ),
