@@ -4,14 +4,14 @@ class CustomListItem extends StatelessWidget {
   final String text1;
   final String text2;
   final String text3;
-  final String imagePath;
+  // final String imagePath;
   final Function()? onTap;
 
   CustomListItem({
     required this.text1,
     required this.text2,
     required this.text3,
-    required this.imagePath,
+    // required this.imagePath,
     this.onTap,
   });
 
@@ -38,7 +38,7 @@ class CustomListItem extends StatelessWidget {
                 Text(text3),
               ],
             ),
-            trailing: Image.asset(imagePath),
+            // trailing: Image.asset(imagePath),
             onTap: onTap,
           ),
         ),
