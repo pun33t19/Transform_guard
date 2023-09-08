@@ -2,6 +2,7 @@ import 'dart:collection';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:transform_guard/features/tranformers/screens/tranformers_list_screen.dart';
 import 'package:transform_guard/list_screen.dart';
 import 'package:transform_guard/maps.dart';
 import 'package:transform_guard/widgets/top_row.dart';
@@ -16,7 +17,7 @@ class HomeScreen extends StatelessWidget {
         text1: "Ankali Sector, Sangli",
         text2: "Power Way 1",
         text3: "Avg height - 120.43 m",
-        trailingNumber: 60,
+        trailingNumber: 70,
       ),
       CustomListItem(
         text1: "Savali Sector, Sangli",
@@ -83,28 +84,32 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              SizedBox(
-                height: height * 0.25,
-                width: width,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(40),
-                  child: Card(
-                    color: const Color.fromARGB(255, 238, 235, 235),
-                    elevation: 30,
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "View all\nPower Ways",
-                            textAlign: TextAlign.left,
-                            style: GoogleFonts.poppins(
-                                fontSize: 22, fontWeight: FontWeight.w500),
-                          ),
-                          Image.asset("assets/tranformer_img.png")
-                        ],
+              GestureDetector(
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => TransformersListScreen())),
+                child: SizedBox(
+                  height: height * 0.25,
+                  width: width,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(40),
+                    child: Card(
+                      color: const Color.fromARGB(255, 238, 235, 235),
+                      elevation: 30,
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "View all\nPower Ways",
+                              textAlign: TextAlign.left,
+                              style: GoogleFonts.poppins(
+                                  fontSize: 22, fontWeight: FontWeight.w500),
+                            ),
+                            Image.asset("assets/tranformer_img.png")
+                          ],
+                        ),
                       ),
                     ),
                   ),
